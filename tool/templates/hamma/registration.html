@@ -1,0 +1,46 @@
+{% extends "hamma/base.html" %}
+{% load static %}
+{% block body_block %}
+<style>
+  .tf {
+    font-family: Ink Free;
+    text-align: center;
+    font-size: 55px;
+    border-radius: 15px;
+    border: 2px solid rgba(21, 209, 37, 0.63);
+    padding: 10px;
+  }
+  .ft {
+    font-family: Ink Free;
+    text-align: center;
+    font-size: 25px;
+  }
+  .tft {
+    font-family: Ink Free;
+    font-size: 25px;
+    border-radius: 15px;
+    border: 2px solid rgba(21, 209, 37, 0.63);
+    padding: 10px;
+  }
+</style>
+
+  <div class="container">
+    <div class="jumbotron">
+      {% if registered %}
+        <h1 class="ft">Thank you for registering!</h1>
+      {% else %}
+        <h1 class="tf">Keep Pushing Sign Up</h1><br>
+        <h3 class="ft">Just fill out the form.</h3><br>
+<form enctype="multipart/form-data" method="POST">
+          {% csrf_token %}
+          <div class="tft">
+          {{ user_form.as_p }}
+          {{ profile_form.as_p }}
+        </div><br>
+          <input type="submit" name="" value="Sign Up">
+        </form>
+        
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

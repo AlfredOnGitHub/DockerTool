@@ -1,0 +1,25 @@
+{% extends "hamma/base.html" %}
+{% block body_block %}
+<style>
+  .tf {
+    font-family: Ink Free;
+    text-align: center;
+    font-size: 55px;
+    border-radius: 15px;
+    border: 2px solid rgba(21, 209, 37, 0.63);
+    padding: 10px;
+  }
+</style>
+
+<div class="container">
+  <div class="jumbotron">
+    <div class="tf">Who tf r u?</div>
+    {% if user.is_authenticated %}
+        <h2>Hello {{ user.username }}</h2>
+        {{ view.app }}
+    {% else %}
+        <h2>Sign up or Login to see what's up</h2>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
