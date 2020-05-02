@@ -1,2 +1,3 @@
 ./tool/db.sqlite3
 *__pycach*
+./tool/logs

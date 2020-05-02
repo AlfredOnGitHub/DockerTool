@@ -5,11 +5,11 @@ COPY ./tool /tool
 #workird
 WORKDIR /tool
 #escuchar puertos
-EXPOSE 5000
+EXPOSE 8000
 #django y pillow
 RUN pip install \
     django\
     pillow
 #comando
-CMD ["python","./manage.py","runserver","0.0.0.0:5000"]
+CMD ["python","./manage.py","runserver"]
 
